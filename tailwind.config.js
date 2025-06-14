@@ -7,10 +7,7 @@ export default {
         sans: ['"SF Pro Display"', 'ui-sans-serif', 'system-ui'],
       },
       borderRadius: {
-        lg: '1.25rem',      // 20px
-      },
-      borderWidth: {
-        DEFAULT: '1px',
+        lg: '1.25rem',
       },
       colors: {
         darkbg: '#08080a',

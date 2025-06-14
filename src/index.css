@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Glass card statique */
+/* Glass card très subtile */
 .glass {
   position: relative;
   background: transparent;
@@ -14,14 +14,14 @@
   overflow: hidden;
 }
 
-/* Light spots helper */
+/* Helper pour les spots lumineux */
 .light-spot {
   position: absolute;
   border-radius: 50%;
-  mix-blend-mode: screen;
   filter: blur(3xl);
+  mix-blend-mode: screen;
 }
 
-/* Blob animations (déjà dans tailwind.config.js) */
+/* Animations blobs (déjà dans tailwind.config.js) */
 .animate-blob       { animation: blob 8s ease-in-out infinite; }
 .animate-blob-slow  { animation: blob 12s ease-in-out infinite; }

@@ -1,29 +1,24 @@
-import React, {useState,useEffect} from 'react'
-import GlassCard from './GlassCard.jsx'
+import React from 'react'
 
-export default function Projects({githubUser}){
-  const [repos,setRepos] = useState([])
-  useEffect(()=>{
-    fetch(`https://api.github.com/users/${githubUser}/repos?per_page=6&sort=updated`)
-      .then(r=>r.json()).then(setRepos)
-  },[githubUser])
-
+export default function Projects({ repos }) {
   return (
-    <section id="projects" className="py-20 px-6">
-      <h2 className="text-3xl font-bold mb-8 text-center">Projets</h2>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {repos.map(r=>(
-          <GlassCard key={r.id}>
-            <h3 className="text-2xl font-semibold mb-2">{r.name}</h3>
-            <p className="text-sm mb-4">{r.description}</p>
-            {r.language && <span className="px-3 py-1 bg-white/20 rounded-full text-xs">{r.language}</span>}
-            <div className="mt-4">
-              <a href={r.html_url} target="_blank" rel="noopener" className="text-blue-200 hover:underline text-sm">
-                Voir sur GitHub
-              </a>
+    <section id="projects" className="py-16 px-6">
+      <div className="max-w-screen-lg mx-auto">
+        <h2 className="text-2xl font-light text-center mb-6">Projets</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {repos.map(r => (
+            <div key={r.id} className="glass p-4 h-40 flex flex-col justify-between">
+              <h3 className="text-lg font-medium">{r.name}</h3>
+              <p className="text-xs text-gray-400 line-clamp-2">{r.description ?? '–'}</p>
+              <div className="flex items-center justify-between text-xs">
+                {r.language && (
+                  <span className="px-2 py-0.5 bg-white/10 rounded-full">{r.language}</span>
+                )}
+                <a href={r.html_url} target="_blank" className="hover:underline">GitHub</a>
+              </div>
             </div>
-          </GlassCard>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )
