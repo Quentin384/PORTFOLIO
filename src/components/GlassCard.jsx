@@ -1,11 +1,21 @@
-.glass {
-  position: relative;
-  background: rgba(255,255,255,0.04);          /* très léger voile blanc */
-  border-radius: 1.25rem;
-  border: 1px solid rgba(255,255,255,0.15);
-  /* on passe à 60px de blur pour un net contraste */
-  backdrop-filter: blur(60px) saturate(180%);
-  -webkit-backdrop-filter: blur(60px) saturate(180%);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
-  overflow: hidden;
+import React from 'react'
+import Tilt from 'react-parallax-tilt'
+
+export default function GlassCard({ children, className = '' }) {
+  return (
+    <Tilt
+      className={`glass ${className} overflow-hidden`}
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      glareEnable={false}
+      scale={1.02}
+      transitionSpeed={250}
+      style={{ width: '100%', height: '100%' }}
+    >
+      {/* On peut supprimer le <div> ou ne garder que le padding */}
+      <div className="h-full p-4">
+        {children}
+      </div>
+    </Tilt>
+  )
 }

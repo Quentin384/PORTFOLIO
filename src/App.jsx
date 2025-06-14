@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Footer from './components/Footer'
 import Background from './components/Background'
+import Reveal from './components/Reveal'
 import './index.css'
 
 export default function App() {
@@ -19,15 +20,32 @@ export default function App() {
 
   return (
     <div className="relative font-sans text-white min-h-screen overflow-x-hidden">
-      {/* Fond fixe */}
+      {/* Fond fixe en arrière-plan */}
       <Background />
 
+      {/* Barre de navigation */}
       <Nav />
-      <Hero />
-      <About />
-      <Projects repos={repos} />
-      <Skills />
-      <Footer />
+
+      {/* Sections révélées au scroll */}
+      <Reveal>
+        <Hero />
+      </Reveal>
+
+      <Reveal delay={0.2}>
+        <About />
+      </Reveal>
+
+      <Reveal delay={0.4}>
+        <Projects repos={repos} />
+      </Reveal>
+
+      <Reveal delay={0.6}>
+        <Skills />
+      </Reveal>
+
+      <Reveal delay={0.8}>
+        <Footer />
+      </Reveal>
     </div>
   )
 }
