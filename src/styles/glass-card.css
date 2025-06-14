@@ -1,16 +1,40 @@
-/* Glass card statique, ultra-transparente */
-
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
-.glass {
-  position: relative;
-  background: transparent;                       /* 100% transparent */
-  border-radius: 1.25rem;                        /* 20px */
-  border: 1px solid rgba(255,255,255,0.15);      /* bordure subtile */
-  backdrop-filter: blur(40px) saturate(150%);    /* BLUR réduit pour perf */
-  -webkit-backdrop-filter: blur(40px) saturate(150%);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.4);         /* ombre allégée */
-  overflow: hidden;
+@layer components {
+  .glass {
+    @apply relative overflow-hidden rounded-xl shadow-lg
+           text-white
+           transition-[backdrop-filter,background] duration-300 ease-in-out;
+
+    /* plus transparent */
+    background: rgba(20, 20, 30, 0.1);
+
+    /* bord discret */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* verre dépoli + diffusion renforcée */
+    @apply backdrop-blur-[12px]
+           backdrop-saturate-[250%]
+           backdrop-contrast-125
+           backdrop-brightness-[1.3];
+  }
+
+  .glass::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-br from-white/5 to-transparent -z-10;
+  }
+
+  .glass:hover {
+    background: rgba(20, 20, 30, 0.12);
+    @apply backdrop-blur-[12px]
+           backdrop-saturate-[275%]
+           backdrop-contrast-[140%]
+           backdrop-brightness-[1.4];
+  }
+
+  .glass:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-indigo-400/50;
+  }
 }
-
