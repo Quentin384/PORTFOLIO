@@ -14,13 +14,3 @@
   overflow: hidden;
 }
 
-/* Helpers inchangés */
-.light-spot {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);         /* un peu moins lourd */
-  mix-blend-mode: screen;
-}
-
-.animate-blob       { animation: blob 8s ease-in-out infinite; }
-.animate-blob-slow  { animation: blob 12s ease-in-out infinite; }
