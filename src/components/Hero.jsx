@@ -1,3 +1,4 @@
+// src/components/Hero.jsx
 import React from 'react'
 
 export default function Hero() {
@@ -7,7 +8,7 @@ export default function Hero() {
         <h1 className="text-5xl md:text-7xl font-light mb-2">
           Bonjour, moi c’est Quentin
         </h1>
-        <p className="text-base text-gray-300">
+        <p className="text-base text-gray-200">
           Développeur Full-Stack passionné par l’open-source et les applis Web & Mobiles.
         </p>
       </div>
