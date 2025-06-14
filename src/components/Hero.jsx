@@ -9,7 +9,7 @@ export default function Hero() {
           Bonjour, moi c’est Quentin
         </h1>
         <p className="text-base text-gray-200">
-          Développeur Full-Stack passionné par l’open-source et les applis Web & Mobiles.
+          Sensible aux belles interfaces et aux applis qui donnent envie d’être utilisées.
         </p>
       </div>
     </section>
