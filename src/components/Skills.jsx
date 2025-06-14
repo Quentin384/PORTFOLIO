@@ -1,5 +1,6 @@
 // src/components/Skills.jsx
 import React from 'react'
+import GlassCard from './GlassCard'
 
 export default function Skills() {
   const stacks = [
@@ -15,8 +16,8 @@ export default function Skills() {
     {
       title: 'Backend',
       skills: [
-        { name: 'Java',       slug: 'java' },
-        { name: 'Spring Boot',slug: 'spring' },
+        { name: 'Java',        slug: 'java' },
+        { name: 'Spring Boot', slug: 'spring' },
       ],
     },
     {
@@ -44,7 +45,7 @@ export default function Skills() {
           Compétences
         </h2>
 
-        <div className="mx-auto max-w-3xl glass p-6 py-8 rounded-2xl shadow-lg bg-white bg-opacity-10">
+        <GlassCard className="p-6 py-8 max-w-3xl mx-auto">
           {stacks.map(({ title, skills }) => (
             <div key={title} className="mb-8">
               <h3 className="text-lg font-medium text-white mb-4">
@@ -66,7 +67,7 @@ export default function Skills() {
               </div>
             </div>
           ))}
-        </div>
+        </GlassCard>
       </div>
     </section>
   )
