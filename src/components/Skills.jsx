@@ -1,4 +1,3 @@
-// src/components/Skills.jsx
 import React from 'react'
 import GlassCard from './GlassCard'
 
@@ -40,14 +39,15 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative z-10 py-12 px-4">
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-2xl font-semibold mb-6 text-white">
           Compétences
         </h2>
 
-        <GlassCard className="p-6 py-8 max-w-3xl mx-auto">
+        {/* Chaque catégorie dans sa propre carte */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {stacks.map(({ title, skills }) => (
-            <div key={title} className="mb-8">
+            <GlassCard key={title} className="p-6 py-8">
               <h3 className="text-lg font-medium text-white mb-4">
                 {title}
               </h3>
@@ -65,9 +65,9 @@ export default function Skills() {
                   </div>
                 ))}
               </div>
-            </div>
+            </GlassCard>
           ))}
-        </GlassCard>
+        </div>
       </div>
     </section>
   )
