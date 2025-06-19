@@ -13,7 +13,7 @@ import './index.css'
 
 /**
  * Composant principal de l'application
- * 
+ *
  * Gère l'état global : récupération des repos GitHub,
  * animation du SunMoonIcon et toggle du background.
  */
@@ -25,7 +25,6 @@ export default function App() {
   const [isChecked, setIsChecked] = useState(true)
 
   // Référence vers le composant SunMoonIcon pour contrôler l'animation
-  // On initialise sans type générique pour rester en JavaScript
   const iconRef = useRef(null)
 
   /**
@@ -35,14 +34,8 @@ export default function App() {
   useEffect(() => {
     fetch('https://api.github.com/users/Quentin384/repos?per_page=6&sort=updated')
       .then(res => res.json())
-      .then(data => {
-        // On met à jour l'état repos avec les données reçues
-        setRepos(data)
-      })
-      .catch(error => {
-        // Gestion basique des erreurs
-        console.error('Erreur lors de la récupération des repos :', error)
-      })
+      .then(data => setRepos(data))
+      .catch(error => console.error('Erreur lors de la récupération des repos :', error))
   }, [])
 
   /**
@@ -54,68 +47,33 @@ export default function App() {
    */
   const handleToggle = (checked) => {
     setIsChecked(checked)
-
-    // Démarrage de l'animation du SunMoonIcon
     iconRef.current?.startAnimation()
-
-    // Arrêt de l'animation après une courte durée
-    setTimeout(() => {
-      iconRef.current?.stopAnimation()
-    }, 800)
+    setTimeout(() => iconRef.current?.stopAnimation(), 800)
   }
 
   return (
     <div className="relative font-sans text-white min-h-screen overflow-x-hidden">
-      {/*
-        Background : change l'image selon isChecked
-        isAlt = false : image par défaut
-        isAlt = true  : image alternative
-      */}
+      {/* Background : change l'image selon isChecked */}
       <Background isAlt={isChecked} />
 
       {/* Barre de navigation principale */}
       <Nav />
 
-      {/*
-        Zone fixe en haut à droite contenant le Switch et l'icône
-        flex : pour aligner horizontalement
-        items-center : centrer verticalement
-        space-x-2 : espacement horizontal entre les éléments
-        z-30 : superposition au-dessus des autres sections
-      */}
-      <div className="fixed top-14 right-8 z-30 flex items-center space-x-2">
+      {/* Zone fixe en haut à droite : icône et switch */}
+      <div className="fixed top-14 right-8 z-30 flex items-center space-x-4">
         {/* Icône animée soleil/lune contrôlée par ref */}
         <SunMoonIcon ref={iconRef} size={20} />
 
-        {/* Switch contrôlé : passe de true à false */}
+        {/* Switch contrôlé */}
         <Switch checked={isChecked} onChange={handleToggle} />
       </div>
 
-      {/* Sections principales révélées l'une après l'autre au scroll */}
-      <Reveal>
-        {/* Section Héros avec titre, sous-titre, etc. */}
-        <Hero />
-      </Reveal>
-
-      <Reveal delay={0.2}>
-        {/* Section À propos présentant l'utilisateur */}
-        <About />
-      </Reveal>
-
-      <Reveal delay={0.4}>
-        {/* Section Projets affichant les repos GitHub récupérés */}
-        <Projects repos={repos} />
-      </Reveal>
-
-      <Reveal delay={0.6}>
-        {/* Section Compétences */}
-        <Skills />
-      </Reveal>
-
-      <Reveal delay={0.8}>
-        {/* Pied de page */}
-        <Footer />
-      </Reveal>
+      {/* Sections principales révélées au scroll */}
+      <Reveal><Hero /></Reveal>
+      <Reveal delay={0.2}><About /></Reveal>
+      <Reveal delay={0.4}><Projects repos={repos} /></Reveal>
+      <Reveal delay={0.6}><Skills /></Reveal>
+      <Reveal delay={0.8}><Footer /></Reveal>
     </div>
   )
 }

@@ -12,6 +12,19 @@ export default {
       colors: {
         darkbg: '#08080a',
       },
+      // Ajout pour effet glow
+      dropShadow: {
+        neon: '0 0 8px rgba(56,189,248,0.8)',
+      },
+      keyframes: {
+        glow: {
+          '0%, 100%': { opacity: '0.8' },
+          '50%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'glow-pulse': 'glow 1.5s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
