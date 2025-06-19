@@ -1,5 +1,6 @@
 import React from 'react';
 import Tooltip from './Tooltip';
+import GitHubButton from './GitHubButton';  // 🆕 importe ton bouton GitHub
 
 export default function About() {
   return (
@@ -23,9 +24,10 @@ export default function About() {
         </blockquote>
       </div>
 
-      {/* 📌 Bouton *en dehors* du space-y-6, pour spacer à volonté */}
-      <div className="mt-20 flex justify-center">
+      {/* 📌 Boutons côte à côte */}
+      <div className="mt-20 flex justify-center space-x-16">
         <Tooltip />
+        <GitHubButton />
       </div>
     </section>
   );
