@@ -23,7 +23,7 @@ const Tooltip = () => {
           </div>
         </div>
         <div className="text">
-          <a className="icon" href="https://www.linkedin.com/in/quentin-zampieri/">
+          <a className="icon" href="https://www.linkedin.com/in/quentin-zampieri/" target="_blank">
             <div className="layer">
               <span />
               <span />
