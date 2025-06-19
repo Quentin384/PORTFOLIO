@@ -108,7 +108,7 @@ const StyledWrapper = styled.div`
 
   .layer span,
   .text {
-    color: #1da1f2;
+    color: white;                      // linkedin text color 
     border-color: #1da1f2;
   }
 
