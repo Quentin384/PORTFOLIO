@@ -1,8 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Nav component with final refined hover glow
- */
 export default function Nav() {
   const links = [
     { label: 'Accueil', href: '#hero' },
@@ -10,6 +7,8 @@ export default function Nav() {
     { label: 'Compétences', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];
+
+  const [hovered, setHovered] = useState(null);
 
   return (
     <nav className="fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center z-20">
@@ -19,9 +18,15 @@ export default function Nav() {
           <li key={href}>
             <a
               href={href}
-              className="text-white transition duration-300 ease-out"
-              onMouseEnter={e => e.currentTarget.style.textShadow = '0 0 4px white, 0 0 8px white'}
-              onMouseLeave={e => e.currentTarget.style.textShadow = 'none'}
+              onMouseEnter={() => setHovered(label)}
+              onMouseLeave={() => setHovered(null)}
+              className="text-white transition-all duration-300 ease-out"
+              style={{
+                textShadow:
+                  hovered === label ? '0 0 4px white, 0 0 8px white' : 'none',
+                transition: 'text-shadow 0.3s ease, transform 0.2s ease',
+                transform: hovered === label ? 'scale(1.02)' : 'scale(1)',
+              }}
             >
               {label}
             </a>
