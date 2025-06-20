@@ -14,11 +14,39 @@ import './index.css'
 /**
  * Composant principal de l'application
  *
- * Gère l'état global : récupération des repos GitHub,
+ * Gère l'état global : récupération manuelle des repos GitHub mis en avant,
  * animation du SunMoonIcon et toggle du background.
  */
 export default function App() {
-  // État pour stocker la liste des repositories GitHub
+  // Liste des repositories à afficher + url du site déployé (si dispo)
+  const featuredRepos = [
+    {
+      name: 'FRONTEND-GROUPSMAKER',
+      liveUrl: 'https://mon-generateur-groupes.netlify.app/', 
+    },
+    {
+      name: 'BACKEND-GROUPSMAKER',
+      liveUrl: null,
+    },
+    {
+      name: 'SPRINGBOOT-API',
+      liveUrl: null,
+    },
+    {
+      name: 'MINI-ERP',
+      liveUrl: null, 
+    },
+    {
+      name: 'Java-Shoot',
+      liveUrl: null,
+    },
+    {
+      name: 'MyTamagochi',
+      liveUrl: 'https://quentin384.github.io/MyTamagochi/',
+    },
+  ]
+
+  // État pour stocker la liste des repositories GitHub à afficher
   const [repos, setRepos] = useState([])
 
   // État du switch (true = image par défaut, false = image alternative)
@@ -28,22 +56,27 @@ export default function App() {
   const iconRef = useRef(null)
 
   /**
-   * Effet de bord : récupération des 6 repos GitHub les plus récemment mis à jour
-   * au montage du composant (équivalent de componentDidMount)
+   * Effet de bord : récupération des repos GitHub listés dans featuredRepos
    */
   useEffect(() => {
-    fetch('https://api.github.com/users/Quentin384/repos?per_page=6&sort=updated')
-      .then(res => res.json())
-      .then(data => setRepos(data))
-      .catch(error => console.error('Erreur lors de la récupération des repos :', error))
+    Promise.all(
+      featuredRepos.map((repo) =>
+        fetch(`https://api.github.com/repos/Quentin384/${repo.name}`)
+          .then((res) => res.json())
+          .then((data) => ({
+            ...data,
+            liveUrl: repo.liveUrl, // On ajoute l'url live à l'objet repo récupéré
+          }))
+      )
+    )
+      .then((data) => setRepos(data))
+      .catch((error) =>
+        console.error('Erreur lors de la récupération des repos :', error)
+      )
   }, [])
 
   /**
    * Handler pour le toggle du switch
-   * @param {boolean} checked - nouvelle valeur du switch
-   *
-   * Met à jour l'état isChecked, lance l'animation du SunMoonIcon
-   * et l'arrête après 800ms.
    */
   const handleToggle = (checked) => {
     setIsChecked(checked)
