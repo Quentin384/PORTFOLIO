@@ -1,6 +1,6 @@
 # Quentin Zampieri — Développeur Fullstack 💻
 
-![Marty McFly](https://i.imgur.com/Y1Z7tZf.gif)
+![Marty McFly](https://i.imgur.com/DH1xvvn.gif)
 
 Bienvenue sur mon portfolio personnel, une vitrine interactive de mes projets, compétences et expérimentations en développement web.
 
@@ -18,7 +18,7 @@ Ce portfolio est une démonstration de mes compétences UI & techniques avec une
 ## 🛠️ Stack technique
 
 ### 🧑‍💻 Frontend  
-<img src="https://skillicons.dev/icons?i=angular,react,reactnative,ts,js,vite,tailwind" />
+<img src="https://skillicons.dev/icons?i=angular,react,ts,js,vite,tailwind" />
 
 ### 🔧 Backend  
 <img src="https://skillicons.dev/icons?i=java,spring" />
