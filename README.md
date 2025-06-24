@@ -1,6 +1,6 @@
 # Quentin Zampieri — Développeur Fullstack 💻
 
-![Marty McFly](https://gifdb.com/gif/marty-mcfly-back-to-the-future-ek61dzywnpljqbxv.html?embed=true)
+![Marty McFly](https://media.gifdb.com/marty-mcfly-back-to-the-future-ek61dzywnpljqbxv.gif)
 
 Bienvenue sur mon portfolio personnel, une vitrine interactive de mes projets, compétences et expérimentations en développement web.
 
