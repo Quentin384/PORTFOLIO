@@ -19,28 +19,29 @@ Ce portfolio est une démonstration de mes compétences UI, conçu pour allier e
 
 ### Frontend
 
-[![Angular](https://skills-icons.dev/icons?i=angular)](https://angular.io)
-[![React](https://skills-icons.dev/icons?i=react)](https://react.dev)
-[![Vite](https://skills-icons.dev/icons?i=vite)](https://vitejs.dev)
-[![TailwindCSS](https://skills-icons.dev/icons?i=tailwind)](https://tailwindcss.com)
-[![JavaScript](https://skills-icons.dev/icons?i=js)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+[![Angular](https://skillsicons.dev/icons?i=angular)](https://angular.io)
+[![React](https://skillsicons.dev/icons?i=react)](https://react.dev)
+[![Vite](https://skillsicons.dev/icons?i=vite)](https://vitejs.dev)
+[![TailwindCSS](https://skillsicons.dev/icons?i=tailwind)](https://tailwindcss.com)
+[![JavaScript](https://skillsicons.dev/icons?i=js)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ### Backend
 
-[![Java](https://skills-icons.dev/icons?i=java)](https://www.java.com)
-[![Spring Boot](https://skills-icons.dev/icons?i=spring)](https://spring.io/projects/spring-boot)
+[![Java](https://skillsicons.dev/icons?i=java)](https://www.java.com)
+[![Spring Boot](https://skillsicons.dev/icons?i=spring)](https://spring.io/projects/spring-boot)
 
 ### Base de données
 
-[![PostgreSQL](https://skills-icons.dev/icons?i=postgres)](https://www.postgresql.org)
-[![MongoDB](https://skills-icons.dev/icons?i=mongodb)](https://www.mongodb.com)
+[![PostgreSQL](https://skillsicons.dev/icons?i=postgres)](https://www.postgresql.org)
+[![MongoDB](https://skillsicons.dev/icons?i=mongodb)](https://www.mongodb.com)
 
 ### Outils & Hébergement
 
-[![Git](https://skills-icons.dev/icons?i=git)](https://git-scm.com)
-[![GitHub](https://skills-icons.dev/icons?i=github)](https://github.com)
-[![Vercel](https://skills-icons.dev/icons?i=vercel)](https://vercel.com)
-[![Figma](https://skills-icons.dev/icons?i=figma)](https://www.figma.com)
+[![Git](https://skillsicons.dev/icons?i=git)](https://git-scm.com)
+[![GitHub](https://skillsicons.dev/icons?i=github)](https://github.com)
+[![Vercel](https://skillsicons.dev/icons?i=vercel)](https://vercel.com)
+[![Figma](https://skillsicons.dev/icons?i=figma)](https://www.figma.com)
 
 ---
 
