@@ -1,6 +1,9 @@
 # Quentin Zampieri — Développeur Fullstack 💻
 
-![Marty McFly](https://i.imgur.com/DH1xvvn.gif)
+<p align="center">
+  <img src="https://i.imgur.com/DH1xvvn.gif" width="300" />
+</p>
+
 
 Bienvenue sur mon portfolio personnel, une vitrine interactive de mes projets, compétences et expérimentations en développement web.
 
