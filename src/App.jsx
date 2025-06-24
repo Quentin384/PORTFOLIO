@@ -22,7 +22,7 @@ export default function App() {
   const featuredRepos = [
     {
       name: 'FRONTEND-GROUPSMAKER',
-      liveUrl: 'https://mon-generateur-groupes.netlify.app/', 
+      liveUrl: null, 
     },
     {
       name: 'BACKEND-GROUPSMAKER',
