@@ -10,7 +10,7 @@ Bienvenue sur mon portfolio personnel, une vitrine interactive de mes projets, c
 
 ## ✨ À propos
 
-Je suis un développeur **fullstack** passionné, spécialisé en **Java Spring Boot** côté backend, et en **Angular**, **React**, **Vite**, **TailwindCSS** côté frontend.  
+Je suis un développeur **fullstack** passionné, spécialisé en **Java Spring Boot** côté backend, et en **Angular**, **React**, **TailwindCSS** côté frontend.  
 Ce portfolio est une démonstration de mes compétences UI & techniques avec une approche moderne, responsive et animée.
 
 ---
@@ -44,7 +44,7 @@ Ce portfolio est une démonstration de mes compétences UI & techniques avec une
 ## 📬 Me contacter
 
 📧 zampieri.quentin38@gmail.com  
-📎 [LinkedIn](https://www.linkedin.com/in/quentinzampieri)  
+📎 [LinkedIn](https://www.linkedin.com/in/quentin-zampieri)  
 💼 [GitHub](https://github.com/Quentin384)
 
 ---
